@@ -1,4 +1,6 @@
-
+import Link from "next/link";
+import SavingsCalculator from "./saving-calculator";
+import CurrentYear from "./current-year";
 const features = [
   {
     number: "01",
@@ -51,7 +53,7 @@ const milestones = [
 
 function Brand({ light = false }: { light?: boolean }) {
   return (
-    <a href="/" className="flex w-fit items-center gap-3">
+    <Link href="/" className="flex w-fit items-center gap-3">
       <span
         className={`flex h-10 w-10 items-center justify-center rounded-xl text-lg font-bold ${
           light
@@ -68,7 +70,7 @@ function Brand({ light = false }: { light?: boolean }) {
       >
         Savora
       </span>
-    </a>
+    </Link>
   );
 }
 
@@ -294,6 +296,8 @@ export default function Home() {
         </div>
       </section>
 
+      <SavingsCalculator />
+
       {/* Trust strip */}
       <section className="border-y border-[#e6e8de] bg-[#f2f3eb]">
         <div className="mx-auto grid max-w-7xl gap-6 px-5 py-7 sm:grid-cols-3 sm:px-8 lg:px-12">
@@ -493,7 +497,7 @@ export default function Home() {
               goes a long way.
             </h2>
             <p className="mt-5 max-w-xl leading-7 text-white/70">
-              Your next goal doesn't have to feel far away. Start planning,
+              Your next goal doesn&apos;t have to feel far away. Start planning,
               make a commitment to yourself, and take the first step.
             </p>
             <a
@@ -525,7 +529,7 @@ export default function Home() {
             </a>
           </div>
           <p className="text-xs text-[#899287]">
-            © {new Date().getFullYear()} Savora · Prototype
+            © <CurrentYear /> Savora · Prototype
           </p>
         </div>
       </footer>
