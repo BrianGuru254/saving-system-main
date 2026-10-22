@@ -1,0 +1,23 @@
+server:
+  port: 8080
+  servlet:
+    session:
+      cookie:
+        http-only: true
+        same-site: lax
+        secure: ${SAVORA_COOKIE_SECURE:false}
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/savora
+    username: savora
+    password: savora
+  flyway:
+    enabled: true
+management:
+  endpoints.web.exposure.include: health,info
+savora.frontend-origin: http://localhost:3000
+savora:
+  password-reset:
+    url: ${SAVORA_PASSWORD_RESET_URL:http://localhost:3000/reset-password?token=}
+    from: ${SAVORA_MAIL_FROM:no-reply@savora.local}
+  admin-api-key: ${SAVORA_ADMIN_API_KEY:}
